@@ -1,5 +1,11 @@
-from arithematic import Riyazi
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import pytest
+from Arithematic.arithematic import Riyazi
+
+
 obj1=Riyazi
 def test_add_both_integer_argument():
     assert obj1.Add(4, 3) == 7
