@@ -35,3 +35,21 @@ def test_subtract_First_argument_must_be_float_or_integer():
 def test_subtract_Both_arguments_must_be_float_or_integer():
     with pytest.raises(ValueError, match="Both arguments must be int or float."):
         obj1.Subtract("a", "b")
+# Tests for Multiplication
+def test_multiplication_both_integer_argument():
+    assert obj1.Multiplication(3, 2) == 6
+
+def test_multiplication_both_float_argument():
+    assert obj1.Multiplication(3.0, 2.0) == 6.0
+
+def test_multiplication_Second_argument_must_be_float_or_integer():
+    with pytest.raises(ValueError, match="Second argument must be an int or float."):
+        obj1.Multiplication(1, "a")
+
+def test_multiplication_First_argument_must_be_float_or_integer():
+    with pytest.raises(ValueError, match="First argument must be an int or float."):
+        obj1.Multiplication("a", 1)
+
+def test_multiplication_Both_arguments_must_be_float_or_integer():
+    with pytest.raises(ValueError, match="Both arguments must be int or float."):
+        obj1.Multiplication("a", "b")
