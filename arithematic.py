@@ -20,3 +20,9 @@ class Riyazi:
             return a + b
         except ValueError as e:
             raise e
+    def Subtract(num1, num2):
+        try:
+            a, b = Riyazi.__check_value(num1, num2)
+            return a - b
+        except ValueError as e:
+            raise e
