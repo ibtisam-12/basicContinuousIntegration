@@ -53,3 +53,25 @@ def test_multiplication_First_argument_must_be_float_or_integer():
 def test_multiplication_Both_arguments_must_be_float_or_integer():
     with pytest.raises(ValueError, match="Both arguments must be int or float."):
         obj1.Multiplication("a", "b")
+# Tests for Division
+def test_division_both_integer_argument():
+    assert obj1.Division(5, 2) == 2.5
+
+def test_division_both_float_argument():
+    assert obj1.Division(6.0, 2.0) == 3.0
+
+def test_division_Second_argument_must_be_float_or_integer():
+    with pytest.raises(ValueError, match="Second argument must be an int or float."):
+        obj1.Division(1, "a")
+
+def test_division_First_argument_must_be_float_or_integer():
+    with pytest.raises(ValueError, match="First argument must be an int or float."):
+        obj1.Division("a", 1)
+
+def test_division_Both_arguments_must_be_float_or_integer():
+    with pytest.raises(ValueError, match="Both arguments must be int or float."):
+        obj1.Division("a", "b")
+
+def test_division_must_not_insert_zero_as_second_argument():
+    with pytest.raises(ValueError, match="Do not insert 0"):
+        obj1.Division(1, 0)

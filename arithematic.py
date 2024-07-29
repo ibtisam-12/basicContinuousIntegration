@@ -32,3 +32,16 @@ class Riyazi:
             return a * b
         except ValueError as e:
             raise e
+    def __check_zero(num2):
+        if num2 != 0:
+            return num2
+        else:
+            raise ValueError("Do not insert 0")
+
+    def Division(num1, num2):
+        try:
+            a, b = Riyazi.__check_value(num1, num2)
+            b = Riyazi.__check_zero(num2)
+            return a / b
+        except ValueError as e:
+            raise e
